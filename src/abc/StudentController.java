@@ -1,5 +1,8 @@
 package abc;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,12 +17,24 @@ public class StudentController {
       return new ModelAndView("student", "command", new Student());
    }
    @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
-      public String addStudent(@ModelAttribute("SpringMvc")Student student,ModelMap model)
+      public String addStudent(@ModelAttribute("Student")Student student,ModelMap model)
    {
       model.addAttribute("name", student.getName());
       model.addAttribute("age", student.getAge());
       model.addAttribute("id", student.getId());
       
       return "result";
+   }
+   @RequestMapping(value="/list",method=RequestMethod.GET)
+   public ModelAndView liststudent(ModelMap model)
+   {
+	 ArrayList<Student> list1=new ArrayList<Student>();
+	 Student s=new Student();
+	 s.setName("evan");
+	 Student s1=new Student();
+	 s1.setName("ram");
+	 list1.add(s);
+	 list1.add(s1);
+	 return new ModelAndView("lis","l",list1);
    }
 }
