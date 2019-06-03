@@ -6,15 +6,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/evan")
-public class EvanController 
+@RequestMapping("/c")
+public class ChandraController 
 {
-	   @RequestMapping(method = RequestMethod.GET)
-	   public String printHello(ModelMap model) {
-	      model.addAttribute("message", "hello evan!");
-	      return "evan";
-	   }
-	
-
+	@RequestMapping(method = RequestMethod.GET)
+  public String getc(ModelMap model)
+  {
+	  model.addAttribute("x",21);
+	  
+	  
+	  return "d";
+	  
+  }
 }
-

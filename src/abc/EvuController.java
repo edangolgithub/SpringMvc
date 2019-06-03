@@ -12,7 +12,7 @@ public class EvuController
 	 
 	   @RequestMapping(method = RequestMethod.GET)public String evan(ModelMap model) {
 		      model.addAttribute("message", "Hello evu");
-		      model.addAttribute("abc", "Hello prophrt");
+		      model.addAttribute("abc", "Hello chandra ji");
 		      return "evu";
 		   }
 
